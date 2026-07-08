@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "command-palette": {
+      "source": "nabinkhair42/nk-skills",
+      "sourceType": "github",
+      "skillPath": "skills/command-palette/SKILL.md",
+      "computedHash": "653f760963a3c24c14e2aa84280108ee624adc013b68aa89b47dcbe087f415c8"
+    },
+    "data-table-pattern": {
+      "source": "nabinkhair42/nk-skills",
+      "sourceType": "github",
+      "skillPath": "skills/data-table-pattern/SKILL.md",
+      "computedHash": "8e2a8d6be36fe34c24e07bddea051a390cb61724cc5b53c5a072e9ac8923a2c8"
+    },
+    "feature-spec": {
+      "source": "nabinkhair42/nk-skills",
+      "sourceType": "github",
+      "skillPath": "skills/feature-spec/SKILL.md",
+      "computedHash": "2bef2d7ec5b07cc1cbd039f260087973d266a85c64681224761054ede4bc66d0"
+    },
+    "form-stack": {
+      "source": "nabinkhair42/nk-skills",
+      "sourceType": "github",
+      "skillPath": "skills/form-stack/SKILL.md",
+      "computedHash": "55d425bdc9c7488f2a2410507fd40d99edd3607ec64d0afb33db2c987d148e25"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "4eabc66183767153e404b39d1b839b1c37f2d82d86f0a0d7e880a579d8d62336"
+    },
+    "grill-me": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "skillPath": "skills/productivity/grill-me/SKILL.md",
+      "computedHash": "f321507f77702a54af1db66549ec1685fc625390d06c57d7949cdcda8eb1b5c7"
+    },
+    "optimistic-cache-pattern": {
+      "source": "nabinkhair42/nk-skills",
+      "sourceType": "github",
+      "skillPath": "skills/optimistic-cache-pattern/SKILL.md",
+      "computedHash": "c8b62a0dc5aeba6f2a4225c0bace30040022fca9b12e8f3acc0c94c6f7bdaca8"
+    },
+    "product-stack": {
+      "source": "nabinkhair42/nk-skills",
+      "sourceType": "github",
+      "skillPath": "skills/product-stack/SKILL.md",
+      "computedHash": "1bb24bb023b7d3c2517cf83daaf28930f1d5af25cc862f4cf70392c515fd1737"
+    },
+    "structural-grid": {
+      "source": "nabinkhair42/nk-skills",
+      "sourceType": "github",
+      "skillPath": "skills/structural-grid/SKILL.md",
+      "computedHash": "84653792ad733a2415234c5dd9f5c65050e3306820a21a65e99cb09cf4bbae91"
+    },
+    "tanstack-query-best-practices": {
+      "source": "deckardger/tanstack-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tanstack-query/SKILL.md",
+      "computedHash": "21d2e8b7468a81d772b6527ad8ca178cc2f3f08af777bb9061333013ee88a0c9"
+    }
+  }
+}

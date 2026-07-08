@@ -1,6 +1,7 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
 import type { FinanceData } from "@/services/server/finance";
 
 export const FINANCE_QUERY_KEY = ["finance"] as const;
@@ -18,7 +19,10 @@ async function createFinanceResource(resource: string, data: Record<string, stri
     body: JSON.stringify({ resource, data }),
   });
 
-  if (!response.ok) throw new Error("Unable to save");
+  if (!response.ok) {
+    const body = (await response.json().catch(() => null)) as { error?: string } | null;
+    throw new Error(body?.error ?? "Unable to save");
+  }
   return (await response.json()) as FinanceData;
 }
 
@@ -46,13 +50,27 @@ export function useCreateFinanceResource() {
 
       return { previous };
     },
-    onError: (_error, _variables, context) => {
+    onError: (error, _variables, context) => {
       if (context?.previous) queryClient.setQueryData(FINANCE_QUERY_KEY, context.previous);
+      toast.error(error.message || "Save failed.");
     },
-    onSuccess: (data) => {
+    onSuccess: (data, variables) => {
       queryClient.setQueryData(FINANCE_QUERY_KEY, data);
+      toast.success(savedMessage(variables.resource));
     },
   });
+}
+
+function savedMessage(resource: string) {
+  const labels: Record<string, string> = {
+    account: "Account added.",
+    transaction: "Transaction recorded.",
+    budget: "Budget added.",
+    recurring: "Recurring item added.",
+    goal: "Savings goal added.",
+  };
+
+  return labels[resource] ?? "Saved changes.";
 }
 
 function makeOptimisticSnapshot(data: FinanceData, resource: string, form: Record<string, string>): FinanceData {

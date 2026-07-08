@@ -456,13 +456,13 @@ function Row({
   value: string;
 }) {
   return (
-    <div className="flex items-center justify-between gap-5 px-3 py-4 text-sm leading-relaxed transition-colors hover:bg-accent/30 sm:px-4">
-      <div className="min-w-0">
+    <div className="grid gap-3 px-3 py-4 text-sm leading-relaxed transition-colors hover:bg-accent/30 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-5 sm:px-4">
+      <div className="min-w-0 pr-1">
         <p className="truncate font-medium">{label}</p>
         <p className="truncate text-xs text-muted-foreground">{meta}</p>
       </div>
-      <div className="flex shrink-0 items-center gap-3">
-        <p className="font-medium">{value}</p>
+      <div className="flex min-w-0 items-center justify-between gap-3 sm:justify-end">
+        <p className="min-w-0 truncate font-medium sm:text-right">{value}</p>
         <form action={deleteResourceAction}>
           <input type="hidden" name="id" value={id} />
           <input type="hidden" name="resource" value={resource} />

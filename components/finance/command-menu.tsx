@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Command } from "cmdk";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
 import {
   ArrowRight,
   Banknote,
@@ -74,6 +75,10 @@ export function CommandMenu({ isAdmin }: { isAdmin: boolean }) {
       setQuickText("");
       setQuickAccountId("");
       setOpen(false);
+      toast.success("Transaction recorded.");
+    },
+    onError: (error) => {
+      toast.error(error.message || "Could not save quick transaction.");
     },
   });
 
@@ -261,9 +266,6 @@ export function CommandMenu({ isAdmin }: { isAdmin: boolean }) {
                         {quickDraft.transactionType ?? "expense"} · NPR {quickDraft.amount ?? "?"} ·{" "}
                         {quickDraft.description ?? "Quick entry"}
                       </p>
-                    ) : null}
-                    {quickMutation.isError ? (
-                      <p className="text-xs text-destructive">Could not save. Check account and amount.</p>
                     ) : null}
                     <Button
                       type="submit"

@@ -129,6 +129,14 @@
   body {
     @apply bg-background text-foreground;
   }
+  body {
+    text-rendering: optimizeLegibility;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
   button:not(:disabled), [role="button"]:not(:disabled) {
     cursor: pointer;
   }
@@ -173,6 +181,11 @@
   .page-rails {
     --rail-offset: 1rem;
   }
+
+  .page-rails::before,
+  .page-rails::after {
+    display: none;
+  }
 }
 
 .section-divider {
@@ -206,4 +219,12 @@
   letter-spacing: 0.025em;
   text-transform: uppercase;
   color: var(--muted-foreground);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
